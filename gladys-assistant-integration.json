@@ -1,0 +1,156 @@
+{
+  "manifest_version": 1,
+  "type": "tts",
+  "name": "ElevenLabs",
+  "description": {
+    "en": "Give Gladys a natural voice: scene announcements spoken by ElevenLabs on your speakers.",
+    "fr": "Une voix naturelle pour Gladys : les annonces des scènes lues par ElevenLabs sur vos enceintes."
+  },
+  "version": "0.1.0",
+  "docker_image": "ghcr.io/cicoub13/gladys-elevenlabs:0.1.0",
+  "gladys_version": ">=5.3.0",
+  "cover_image": "https://raw.githubusercontent.com/cicoub13/gladys-elevenlabs/main/cover.png",
+  "categories": ["assistants"],
+  "keywords": ["elevenlabs", "tts", "text-to-speech", "synthèse vocale", "voix", "voice"],
+  "transports": ["cloud"],
+  "config_schema": [
+    {
+      "key": "intro",
+      "type": "section",
+      "label": {
+        "en": "Your ElevenLabs account",
+        "fr": "Votre compte ElevenLabs"
+      },
+      "description": {
+        "en": "Create an API key in your ElevenLabs settings and paste it below. A restricted key needs the \"Text to Speech\" permission, and \"Voices: read\" to find a voice by its name. Every announcement uses ElevenLabs credits; a sentence already spoken with the same voice is reused for free. Then select ElevenLabs as the voice of Gladys on the Artificial Intelligence page.",
+        "fr": "Créez une clé d'API dans vos paramètres ElevenLabs et collez-la ci-dessous. Une clé restreinte a besoin de la permission « Text to Speech », et de « Voices : read » pour trouver une voix par son nom. Chaque annonce consomme des crédits ElevenLabs ; une phrase déjà prononcée avec la même voix est réutilisée gratuitement. Choisissez ensuite ElevenLabs comme voix de Gladys sur la page Intelligence artificielle."
+      },
+      "links": [
+        {
+          "url": "https://elevenlabs.io/app/settings/api-keys",
+          "label": {
+            "en": "ElevenLabs API keys",
+            "fr": "Clés d'API ElevenLabs"
+          }
+        },
+        {
+          "url": "https://elevenlabs.io/app/voice-library",
+          "label": {
+            "en": "Voice Library",
+            "fr": "Bibliothèque de voix"
+          }
+        },
+        {
+          "url": "https://elevenlabs.io/pricing",
+          "label": {
+            "en": "Plans and credits",
+            "fr": "Abonnements et crédits"
+          }
+        }
+      ]
+    },
+    {
+      "key": "api_key",
+      "type": "secret",
+      "label": {
+        "en": "API key",
+        "fr": "Clé d'API"
+      },
+      "placeholder": {
+        "en": "sk_…",
+        "fr": "sk_…"
+      },
+      "required": true
+    },
+    {
+      "key": "voice",
+      "type": "string",
+      "label": {
+        "en": "Voice (name or id)",
+        "fr": "Voix (nom ou identifiant)"
+      },
+      "description": {
+        "en": "A voice of your account: its name (George, Sarah…) or its id. The \"List my voices\" button below shows them all.",
+        "fr": "Une voix de votre compte : son nom (George, Sarah…) ou son identifiant. Le bouton « Lister mes voix » ci-dessous les affiche toutes."
+      },
+      "placeholder": {
+        "en": "George",
+        "fr": "George"
+      },
+      "required": true,
+      "default": "George"
+    },
+    {
+      "key": "model",
+      "type": "select",
+      "label": {
+        "en": "Model",
+        "fr": "Modèle"
+      },
+      "options": [
+        {
+          "value": "eleven_flash_v2_5",
+          "label": {
+            "en": "Flash v2.5: fast, half the credits",
+            "fr": "Flash v2.5 : rapide, deux fois moins de crédits"
+          }
+        },
+        {
+          "value": "eleven_multilingual_v2",
+          "label": {
+            "en": "Multilingual v2: most natural",
+            "fr": "Multilingual v2 : le plus naturel"
+          }
+        },
+        {
+          "value": "eleven_v3",
+          "label": {
+            "en": "v3: most expressive",
+            "fr": "v3 : le plus expressif"
+          }
+        }
+      ],
+      "default": "eleven_flash_v2_5"
+    },
+    {
+      "key": "speed",
+      "type": "number",
+      "label": {
+        "en": "Speed (0.7 to 1.2)",
+        "fr": "Vitesse (0,7 à 1,2)"
+      },
+      "min": 0.7,
+      "max": 1.2,
+      "default": 1
+    },
+    {
+      "key": "stability",
+      "type": "number",
+      "label": {
+        "en": "Stability (0 to 1)",
+        "fr": "Stabilité (0 à 1)"
+      },
+      "description": {
+        "en": "Lower: more expressive and varied. Higher: steadier, more monotonous.",
+        "fr": "Plus bas : plus expressive et variée. Plus haut : plus régulière, plus monotone."
+      },
+      "min": 0,
+      "max": 1,
+      "default": 0.5
+    }
+  ],
+  "actions": [
+    {
+      "key": "list_voices",
+      "label": {
+        "en": "List my voices",
+        "fr": "Lister mes voix"
+      },
+      "description": {
+        "en": "Shows the name and id of every voice of your ElevenLabs account (save the API key first). The voice in use is marked with ✓.",
+        "fr": "Affiche le nom et l'identifiant de chaque voix de votre compte ElevenLabs (enregistrez d'abord la clé d'API). La voix utilisée est marquée d'un ✓."
+      },
+      "timeout_seconds": 30
+    }
+  ]
+}
