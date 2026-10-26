@@ -4,6 +4,8 @@ All notable changes to the ElevenLabs integration for Gladys Assistant.
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-10-26
+
 ### Added
 
 - First version: ElevenLabs becomes a voice of Gladys (Gladys 5.3 or later).
