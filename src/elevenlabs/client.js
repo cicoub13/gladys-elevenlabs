@@ -98,6 +98,11 @@ function errorDetail(body) {
 // Codes ElevenLabs uses for an exhausted credit balance: 402
 // `insufficient_credits`, and the older 401 `quota_exceeded`.
 const CREDIT_CODES = ['insufficient_credits', 'quota_exceeded'];
+// A restricted key missing a permission gets a 401, not the documented 403:
+// `{"code": "unauthorized", "message": "The API key you used is missing the
+// permission user_read to execute this operation."}`. Only its text tells it
+// from a wrong key.
+const MISSING_PERMISSION = /\bpermission/i;
 
 /**
  * Turn a non-2xx answer into an ElevenLabsError.
@@ -115,10 +120,10 @@ function apiError(label, status, body, redact) {
   if (status === 402 || CREDIT_CODES.includes(code)) {
     return new ElevenLabsError('credits', message, details);
   }
-  if (status === 401) {
+  if (status === 401 && !MISSING_PERMISSION.test(text)) {
     return new ElevenLabsError('invalid_key', message, details);
   }
-  if (status === 403) {
+  if (status === 401 || status === 403) {
     return new ElevenLabsError('permission', message, details);
   }
   if (status === 404 && (code === 'voice_not_found' || code === undefined)) {

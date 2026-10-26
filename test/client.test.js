@@ -213,6 +213,19 @@ test('listVoices stops at the maximum', async () => {
 test('API errors are classified from the status and the code', async () => {
   const cases = [
     [401, { detail: { code: 'invalid_api_key', message: 'Invalid API key' } }, 'invalid_key'],
+    // What ElevenLabs really answers to a restricted key missing a permission.
+    [
+      401,
+      {
+        detail: {
+          status: 'unauthorized',
+          message:
+            'The API key you used is missing the permission voices_read to execute this operation.',
+        },
+      },
+      'permission',
+    ],
+    [401, { detail: { code: 'unauthorized' } }, 'invalid_key'],
     [401, { detail: { status: 'quota_exceeded', message: 'quota' } }, 'credits'],
     [402, { detail: { code: 'insufficient_credits' } }, 'credits'],
     [403, { detail: { code: 'model_access_denied' } }, 'permission'],
