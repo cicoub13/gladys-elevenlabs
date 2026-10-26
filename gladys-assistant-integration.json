@@ -6,8 +6,8 @@
     "en": "Give Gladys a natural voice: scene announcements spoken by ElevenLabs on your speakers.",
     "fr": "Une voix naturelle pour Gladys : les annonces des scènes lues par ElevenLabs sur vos enceintes."
   },
-  "version": "1.0.0",
-  "docker_image": "ghcr.io/cicoub13/gladys-elevenlabs:1.0.0",
+  "version": "1.1.0",
+  "docker_image": "ghcr.io/cicoub13/gladys-elevenlabs:1.1.0",
   "gladys_version": ">=5.3.0",
   "cover_image": "https://raw.githubusercontent.com/cicoub13/gladys-elevenlabs/main/cover.png",
   "categories": ["assistants"],
