@@ -15,7 +15,7 @@ subscription.
 
 - An [ElevenLabs](https://elevenlabs.io) account. The free plan is enough to
   try it; every announcement uses ElevenLabs credits, about one credit per
-  character (half with the Flash model). See the
+  character (half with the Flash and v4 Turbo models). See the
   [plans](https://elevenlabs.io/pricing).
 - A speaker connected to Gladys: Sonos, Google Cast or AirPlay.
 - Gladys installed in **host** network mode (the standard install): the
@@ -35,7 +35,7 @@ subscription.
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **API key**            | The key created above (`sk_…`).                                                                                                                                                   |
 | **Voice (name or id)** | A voice of your account: its name (`George` by default) or its 20-character id. The voices of the [library](https://elevenlabs.io/app/voice-library) added to your account count. |
-| **Model**              | **Flash v2.5** (default): fast, half the credits. **Multilingual v2**: most natural. **v3**: most expressive.                                                                     |
+| **Model**              | **Flash v2.5** (default): fast, half the credits. **Multilingual v2**: most natural. **v3**: most expressive. **v4**: highest quality. **v4 Turbo**: fast, half the credits.      |
 | **Speed**              | From 0.7 (slower) to 1.2 (faster). 1 by default.                                                                                                                                  |
 | **Stability**          | From 0 (more expressive and varied) to 1 (steadier). 0.5 by default.                                                                                                              |
 
@@ -61,7 +61,7 @@ account, then use its name or its id.
 In a scene, use the **Talk on a speaker** action: pick the speaker and the
 text to say. The text can hold scene variables.
 
-- The voice speaks the language of the text. With Flash v2.5 and v3, the
+- The voice speaks the language of the text. With every model but Multilingual v2, the
   language of the Gladys administrator is also sent, for a better
   pronunciation.
 - A sentence already spoken with the same voice and settings is reused without

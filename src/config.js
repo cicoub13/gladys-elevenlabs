@@ -14,6 +14,8 @@ export const MODELS = {
   eleven_flash_v2_5: { languageCode: true },
   eleven_multilingual_v2: { languageCode: false },
   eleven_v3: { languageCode: true },
+  eleven_v4: { languageCode: true },
+  eleven_v4_turbo: { languageCode: true },
 };
 
 export const DEFAULTS = {

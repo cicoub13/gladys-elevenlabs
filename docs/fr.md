@@ -15,7 +15,7 @@ abonnement Gladys Plus.
 
 - Un compte [ElevenLabs](https://elevenlabs.io). L'offre gratuite suffit pour
   essayer ; chaque annonce consomme des crédits ElevenLabs, environ un crédit
-  par caractère (la moitié avec le modèle Flash). Voir les
+  par caractère (la moitié avec les modèles Flash et v4 Turbo). Voir les
   [abonnements](https://elevenlabs.io/pricing).
 - Une enceinte connectée à Gladys : Sonos, Google Cast ou AirPlay.
 - Gladys installé en mode réseau **host** (installation standard) : les
@@ -32,13 +32,13 @@ abonnement Gladys Plus.
 2. Dans Gladys, ouvrez l'écran de configuration de l'intégration ElevenLabs et
    remplissez :
 
-| Champ                         | Description                                                                                                                                                                                                  |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Clé d'API**                 | La clé créée ci-dessus (`sk_…`).                                                                                                                                                                             |
-| **Voix (nom ou identifiant)** | Une voix de votre compte : son nom (`George` par défaut) ou son identifiant de 20 caractères. Les voix de la [bibliothèque](https://elevenlabs.io/app/voice-library) ajoutées à votre compte en font partie. |
-| **Modèle**                    | **Flash v2.5** (par défaut) : rapide, deux fois moins de crédits. **Multilingual v2** : le plus naturel. **v3** : le plus expressif.                                                                         |
-| **Vitesse**                   | De 0,7 (plus lent) à 1,2 (plus rapide). 1 par défaut.                                                                                                                                                        |
-| **Stabilité**                 | De 0 (plus expressive et variée) à 1 (plus régulière). 0,5 par défaut.                                                                                                                                       |
+| Champ                         | Description                                                                                                                                                                                                            |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Clé d'API**                 | La clé créée ci-dessus (`sk_…`).                                                                                                                                                                                       |
+| **Voix (nom ou identifiant)** | Une voix de votre compte : son nom (`George` par défaut) ou son identifiant de 20 caractères. Les voix de la [bibliothèque](https://elevenlabs.io/app/voice-library) ajoutées à votre compte en font partie.           |
+| **Modèle**                    | **Flash v2.5** (par défaut) : rapide, deux fois moins de crédits. **Multilingual v2** : le plus naturel. **v3** : le plus expressif. **v4** : la meilleure qualité. **v4 Turbo** : rapide, deux fois moins de crédits. |
+| **Vitesse**                   | De 0,7 (plus lent) à 1,2 (plus rapide). 1 par défaut.                                                                                                                                                                  |
+| **Stabilité**                 | De 0 (plus expressive et variée) à 1 (plus régulière). 0,5 par défaut.                                                                                                                                                 |
 
 3. Enregistrez. L'état de connexion affiche par exemple `Connecté à ElevenLabs,
 voix « George ». 8 500 crédits restants sur 10 000, renouvelés le 12
@@ -63,7 +63,7 @@ Dans une scène, utilisez l'action **Parler sur une enceinte** : choisissez
 l'enceinte et le texte à lire. Le texte peut contenir des variables de la
 scène.
 
-- La langue de la voix suit celle du texte. Avec Flash v2.5 et v3, la langue de
+- La langue de la voix suit celle du texte. Avec tous les modèles sauf Multilingual v2, la langue de
   l'administrateur de Gladys est aussi transmise pour une meilleure
   prononciation.
 - Une phrase déjà prononcée avec la même voix et les mêmes réglages est

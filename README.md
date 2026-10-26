@@ -17,7 +17,7 @@ integration running in its own container, on the JavaScript SDK
   Cast or AirPlay speakers, without a Gladys Plus subscription.
 - **Any voice of the account**, by name or by id. The **List my voices**
   button of the configuration screen shows them all, the one in use marked.
-- **Model** (Flash v2.5, Multilingual v2, v3), **speed** and **stability**
+- **Model** (Flash v2.5, Multilingual v2, v3, v4, v4 Turbo), **speed** and **stability**
   settings. The language of the request is passed on to the models that take
   it.
 - **Fewer credits**: a sentence already spoken with the same voice and settings
@@ -41,13 +41,13 @@ page answers in text only. Speakers are not affected.
 
 ## Configuration
 
-| Field              | Description                                                                                    |
-| ------------------ | ---------------------------------------------------------------------------------------------- |
-| API key            | Created at [elevenlabs.io/app/settings/api-keys](https://elevenlabs.io/app/settings/api-keys). |
-| Voice (name or id) | A voice of the account: its name (`George` by default) or its 20-character id.                 |
-| Model              | `eleven_flash_v2_5` (default, half the credits), `eleven_multilingual_v2` or `eleven_v3`.      |
-| Speed              | 0.7 to 1.2, 1 by default.                                                                      |
-| Stability          | 0 (more expressive) to 1 (steadier), 0.5 by default.                                           |
+| Field              | Description                                                                                                                                  |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| API key            | Created at [elevenlabs.io/app/settings/api-keys](https://elevenlabs.io/app/settings/api-keys).                                               |
+| Voice (name or id) | A voice of the account: its name (`George` by default) or its 20-character id.                                                               |
+| Model              | `eleven_flash_v2_5` (default, half the credits), `eleven_multilingual_v2`, `eleven_v3`, `eleven_v4` or `eleven_v4_turbo` (half the credits). |
+| Speed              | 0.7 to 1.2, 1 by default.                                                                                                                    |
+| Stability          | 0 (more expressive) to 1 (steadier), 0.5 by default.                                                                                         |
 
 A restricted key needs the **Text to Speech** permission, **Voices: read** to
 find a voice by its name, and **User: read** to show the credits.
