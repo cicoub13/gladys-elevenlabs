@@ -51,7 +51,9 @@ Project-specific notes. Generic rules (SDK contract, commands, kit-owned files, 
   `GET /v1/user/subscription` (`character_count`, `character_limit`,
   `next_character_count_reset_unix`).
 - Errors: `{"detail": {"code", "message", "status"}}` (`status` = legacy `code`), a string, or a
-  422 list of `{loc, msg}`. 401 -> `invalid_key` (except legacy `quota_exceeded`), 402 /
+  422 list of `{loc, msg}`. 401 -> `invalid_key`, except legacy `quota_exceeded` and a
+  restricted key missing a permission (a 401 `unauthorized` "missing the permission …", not the
+  documented 403: seen live) -> `permission`. 402 /
   `insufficient_credits` -> `credits`, 403 -> `permission` (`model_access_denied`…), 404
   `voice_not_found`, 429 -> `rate_limited`, 5xx -> `server`.
 - The key lives in a private field and is scrubbed (`***`) from error texts; labels drop the
