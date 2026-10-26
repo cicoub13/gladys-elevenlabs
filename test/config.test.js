@@ -45,6 +45,8 @@ test('languageCode keeps the ISO 639-1 part for the models that take one', () =>
   assert.equal(languageCode('fr', 'eleven_flash_v2_5'), 'fr');
   assert.equal(languageCode('en-US', 'eleven_v3'), 'en');
   assert.equal(languageCode('PT_br', 'eleven_flash_v2_5'), 'pt');
+  assert.equal(languageCode('de', 'eleven_v4'), 'de');
+  assert.equal(languageCode('es-ES', 'eleven_v4_turbo'), 'es');
 });
 
 test('languageCode sends nothing when the model detects the language or it is unknown', () => {

@@ -108,6 +108,20 @@
             "en": "v3: most expressive",
             "fr": "v3 : le plus expressif"
           }
+        },
+        {
+          "value": "eleven_v4",
+          "label": {
+            "en": "v4: highest quality",
+            "fr": "v4 : la meilleure qualité"
+          }
+        },
+        {
+          "value": "eleven_v4_turbo",
+          "label": {
+            "en": "v4 Turbo: fast, half the credits",
+            "fr": "v4 Turbo : rapide, deux fois moins de crédits"
+          }
         }
       ],
       "default": "eleven_flash_v2_5"

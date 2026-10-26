@@ -4,6 +4,10 @@ All notable changes to the ElevenLabs integration for Gladys Assistant.
 
 ## [Unreleased]
 
+### Added
+
+- The v4 and v4 Turbo models of ElevenLabs can be chosen in the configuration.
+
 ## [1.0.0] - 2026-10-26
 
 ### Added
